@@ -32,8 +32,8 @@ long durasi = 0;
 void setup() {
   TCCR1B |= (1 << WGM12); 
   TIMSK |= (1 << OCIE1A); 
-  OCR1A  = 15624; //15624
-  TCCR1B |= (1 << CS11)|(1 << CS10); 
+  OCR1A  = 31250; //15624for1mhz@64prsc/31249for8mhz@256prsc/312508mhzintprsc256
+  TCCR1B |= (1 << CS12);//|(1 << CS10);  
   DDRB = 0xFF;
   pinMode(0, OUTPUT);
   pinMode(1, OUTPUT);
